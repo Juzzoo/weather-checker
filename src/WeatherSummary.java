@@ -8,6 +8,8 @@ public class WeatherSummary {
 
         double max = Double.NEGATIVE_INFINITY;
         double min = Double.POSITIVE_INFINITY;
+        double sum = 0;
+        int count = 0;
 
         while (scanner.hasNextDouble()) {
             double temperature = scanner.nextDouble();
@@ -19,9 +21,15 @@ public class WeatherSummary {
             if (temperature < min) {
                 min = temperature;
             }
+
+            sum += temperature;
+            count++;
         }
+
+        double average = sum / count;
 
         System.out.println("Max: " + max);
         System.out.println("Min: " + min);
+        System.out.println("Average: " + average);
     }
 }
